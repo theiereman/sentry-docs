@@ -7,7 +7,7 @@ import getAllFilesRecursively from './files';
 import {FrontMatter} from './types';
 import {isNotNil} from './utils';
 
-const root = path.resolve(__dirname, '..');
+const root = process.cwd();
 const FILE_CONCURRENCY_LIMIT = 20;
 
 const formatSlug = (slug: string): string =>
