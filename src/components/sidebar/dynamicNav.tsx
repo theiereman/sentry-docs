@@ -156,7 +156,7 @@ export const renderChildren = (
       // Add section header (with optional link)
       const sectionLink = SECTION_LINKS[sectionKey];
       const sectionHref = sectionLink && rootPath ? `/${rootPath}/${sectionLink}/` : null;
-      
+
       result.push(
         <li
           key={`header-${sectionKey}`}
@@ -232,8 +232,16 @@ type ChildrenProps = {
   showDepth?: number;
 };
 
-export function Children({tree, path, exclude = [], showDepth = 0, rootPath}: ChildrenProps) {
-  return <Fragment>{renderChildren(tree, exclude, path, showDepth, 0, rootPath)}</Fragment>;
+export function Children({
+  tree,
+  path,
+  exclude = [],
+  showDepth = 0,
+  rootPath,
+}: ChildrenProps) {
+  return (
+    <Fragment>{renderChildren(tree, exclude, path, showDepth, 0, rootPath)}</Fragment>
+  );
 }
 
 type Props = {
